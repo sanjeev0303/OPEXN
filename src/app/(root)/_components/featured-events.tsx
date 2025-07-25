@@ -126,10 +126,12 @@ const FeaturedEvents = () => {
                   </div>
                 </div>
               </div>
+              <Link href={"https://forms.gle/3cZoi2xMswg4D658A"}>
               <Button className="w-full bg-green-600 hover:bg-green-700 text-sm md:text-lg py-2 md:py-3">
                 Register for Round Table
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
+              </Link>
             </CardContent>
           </Card>
 
