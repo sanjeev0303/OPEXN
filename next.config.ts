@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    // Performance optimizations
+  // Performance optimizations
   experimental: {
     optimizeCss: true,
     optimizePackageImports: [
@@ -55,12 +55,15 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' https://clerk.dev https://*.clerk.accounts.dev",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://clerk.dev https://*.clerk.accounts.dev https://js.clerk.dev https://*.clerk.dev",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "img-src 'self' data: https: blob:",
               "font-src 'self' https://fonts.gstatic.com",
-              "connect-src 'self' https://clerk.dev https://*.clerk.accounts.dev",
-              "frame-src 'self' https://clerk.dev",
+              "connect-src 'self' https://clerk.dev https://*.clerk.accounts.dev https://api.clerk.dev https://*.clerk.dev wss:",
+              "frame-src 'self' https://clerk.dev https://*.clerk.accounts.dev",
+              "worker-src 'self' blob:",
+              "object-src 'none'",
+              "base-uri 'self'"
             ].join('; ')
           },
           {
@@ -71,7 +74,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-
 
   // Compression and caching
   compress: true,
