@@ -98,7 +98,7 @@ const FeaturedEvents = () => {
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 md:mb-6 gap-2">
                 <div className="flex items-center space-x-2 text-green-600">
                   <Calendar className="w-4 h-4 md:w-5 md:h-5" />
-                  <span className="font-semibold text-sm md:text-base">28th July, 2025*</span>
+                  <span className="font-semibold text-sm md:text-base">5th August, 2025*</span>
                 </div>
                 <div className="flex items-center space-x-2 text-blue-600">
                   <MapPin className="w-4 h-4 md:w-5 md:h-5" />
