@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useScrollDirection } from "@/hooks/use-scroll-direction";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const DynamicHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,16 +46,24 @@ const DynamicHeader = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-6 ">
+            <nav className="hidden lg:flex items-center space-x-6">
               <NavLink href="#about">About</NavLink>
               <NavLink href="#verticals">Verticals</NavLink>
               <NavLink href="#events">Events</NavLink>
               <NavLink href="#contact">Contact</NavLink>
-              <Link href={"/sign-in"}>
-                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-200 hover:scale-105 ">
-                  Get Started
-                </Button>
-              </Link>
+              {/* Show Get Started button if not logged in, else show UserButton */}
+              <SignedOut>
+                <Link href={"/sign-in"}>
+                  <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-200 hover:scale-105 ">
+                    Get Started
+                  </Button>
+                </Link>
+              </SignedOut>
+              <SignedIn >
+                <div className="text-black">
+                    <UserButton />
+                </div>
+              </SignedIn>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -114,7 +123,8 @@ const DynamicHeader = () => {
                 >
                   Contact
                 </MobileNavLink>
-                <Link href={"/sign-in"}>
+                <SignedOut>
+                    <Link href={"/sign-in"}>
                 <Button
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 w-full mt-2"
                   onClick={() => setIsMenuOpen(false)}
@@ -122,6 +132,10 @@ const DynamicHeader = () => {
                   Get Started
                 </Button>
                 </Link>
+                </SignedOut>
+                <SignedIn>
+                    <UserButton />
+                </SignedIn>
               </div>
             </nav>
           </div>
