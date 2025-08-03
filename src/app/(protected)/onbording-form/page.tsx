@@ -1,22 +1,26 @@
 "use client"
-import BackdropGradient from "@/components/global/backdrop-gradient";
-import GlassCard from "@/components/global/glass-card";
-import { motion } from "motion/react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import ExhibitorInfoForm from "./_components/exhibitor-info";
+
+
+const BackdropGradient = dynamic(() => import("@/components/global/backdrop-gradient"), {
+    ssr: false
+});
+
+const GlassCard = dynamic(() => import("@/components/global/glass-card"), {
+    ssr: false
+});
+
+const ExhibitorInfoForm = dynamic(() => import("./_components/exhibitor-info"), {
+    ssr: false
+});
 
 const OnbordingForm = () => {
   return (
-    <div className="container min-h-dvh flex justify-center items-center bg-black">
+    <div className="container min-h-dvh w-full flex justify-center items-center bg-black">
       <div className="flex flex-col w-full items-center">
-        <motion.div
-        initial={{
-            opacity: 0,
-        }}
-        animate={{
-            opacity: 1,
-            transition: { duration: 0.3, ease: [0.4, 0.0, 0.6, 1] },
-        }}
+        <div
+          className="animate-fade-in"
         >
         <Image
           src="/images/opexn_logo.png"
@@ -24,7 +28,7 @@ const OnbordingForm = () => {
           width={200}
           height={50}
         />
-        </motion.div>
+        </div>
          <BackdropGradient
           className="w-4/12 h-2/6 opacity-80 "
           container="flex flex-col items-center"

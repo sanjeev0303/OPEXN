@@ -9,8 +9,6 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import ClassNames from "embla-carousel-class-names";
 import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
-import Image from "next/image";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { usePrevNextButtons } from "./embla-carousel-arrow-buttons";
 import { useAutoplay } from "./embla-carousel-autoplay";
@@ -18,6 +16,7 @@ import { useAutoplayProgress } from "./embla-carousel-autoplay-progress";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { LazyImage } from "../lazy-image";
+import { ChevronLeft, ChevronRight, Pause, Play } from "@/components/icons/micro";
 
 type PropType = {
   slides: {

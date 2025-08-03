@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp } from "@/components/icons/micro";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 

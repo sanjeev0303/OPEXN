@@ -1,22 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Analytics } from "@vercel/analytics/next"
 
-// Optimized font loading with display swap for better performance
+// Optimized font loading - only load primary font
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
   preload: true,
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-  preload: false, // Only preload primary font
 });
 
 // Enhanced viewport configuration
@@ -185,12 +177,11 @@ export default function RootLayout({
           />
         </head>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} antialiased`}
           suppressHydrationWarning
         >
           <main className="overflow-x-hidden bg-background text-foreground min-h-screen">
             {children}
-            <Analytics />
           </main>
         </body>
       </html>
