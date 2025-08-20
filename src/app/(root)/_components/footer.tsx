@@ -23,7 +23,7 @@ export const Footer = () => {
 
           <div className="text-center md:text-right">
             <p className="text-[#94A3B8] mb-2 md:mb-3 text-base md:text-lg">
-              Founded 2025 • Based in <span className="text-[#00D9FF]">Meerut, Uttar Pradesh</span>
+              Founded 2025 • Based in <span className="text-[#00D9FF]">Delhi, NCR</span>
             </p>
             <p className="text-sm md:text-base text-[#64748B]">
               © 2025 <span className="text-transparent bg-gradient-to-r from-[#00D9FF] to-[#FF6B9D] bg-clip-text font-semibold">OPEXN</span>. All rights reserved.

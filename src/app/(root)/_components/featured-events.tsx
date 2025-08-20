@@ -100,7 +100,7 @@ const FeaturedEvents = () => {
           </Card>
 
           {/* Dubai Agri Export Event */}
-          <Card className="group hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 bg-white border border-gray-200 overflow-hidden hover:-translate-y-1">
+          {/* <Card className="group hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 bg-white border border-gray-200 overflow-hidden hover:-translate-y-1">
             <div className="relative h-72 md:h-80 overflow-hidden">
               <Image
                 src="/dubai-agri-export.png"
@@ -161,10 +161,10 @@ const FeaturedEvents = () => {
                 </Button>
               </Link>
             </CardContent>
-          </Card>
+          </Card> */}
 
           {/* Women Entrepreneurs Training */}
-          <Card className="group hover:shadow-2xl hover:shadow-rose-500/10 transition-all duration-500 bg-white border border-gray-200 overflow-hidden hover:-translate-y-1">
+          {/* <Card className="group hover:shadow-2xl hover:shadow-rose-500/10 transition-all duration-500 bg-white border border-gray-200 overflow-hidden hover:-translate-y-1">
             <div className="relative h-72 md:h-80 overflow-hidden">
               <Image
                 src="/women-training-program.png"
@@ -223,7 +223,7 @@ const FeaturedEvents = () => {
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
       </div>
     </section>
